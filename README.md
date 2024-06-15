@@ -36,4 +36,5 @@ Voxel grid using voxel_grid_array:
 ![image](https://github.com/MohammadKatif/Voxelization/assets/143898427/aacbf8f2-c8f9-4b0c-bd71-d8cde6d6d7c5)
 
 ## Additional Information:
-In this code, I have perfomed voxelization on only one mesh object using trimesh and open3d to demonstrate how the voxelization process works. However, the same method cannot be applied when it comes to voxelizing an entire 3D objects dataset(e.g. ModelNet40/10) in google colab.
+- In the [Voxelization.ipynb](https://github.com/MohammadKatif/Voxelization/blob/main/Voxelization.ipynb) code, I have perfomed voxelization on only one mesh object using trimesh and open3d to demonstrate how the voxelization process works.
+- One the other hand, in the [3D_CNN_Data_Preprocessing.ipynb](https://github.com/MohammadKatif/Voxelization/blob/main/3D_CNN_Data_Preprocessing.ipynb) code, I have performed voxelization on the entire ModelNet10 dataset using open3d and stored the results in my google drive. In this code, in addition to converting the mesh objects into voxel grid arrays, I have further preprocessed the voxel grid array data into train dataset, test dataset, train dataloader and test dataloader for 3D Convolutional Neural Networks (CNN).
