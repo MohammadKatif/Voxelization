@@ -29,11 +29,11 @@ Voxel grid using matplotlib:
 
 **Lastly**, to confirm whether the voxelization process was successful, I plotted the voxel grid of the model 2 times using matplotlib. The first time, I plotted the voxel grid using the voxel_coords array. The second time, I plotted the voxel grid using the voxel_grid_array. *(Unlike trimesh, the plotting mechanism of open3d doesn't seems to work in google colab, which is why I have used matplotlib to visualize the voxel grids in this section)*
 
-![image](https://github.com/MohammadKatif/Voxelization/assets/143898427/9ee9a79d-5ce4-460c-8837-831adbc0e2ec)
 Voxel grid using voxel_coords array:
+![image](https://github.com/MohammadKatif/Voxelization/assets/143898427/0d5271ef-8e84-45f5-9f81-4113caa12647)
 
-![image](https://github.com/MohammadKatif/Voxelization/assets/143898427/ea04d972-4ec6-4e90-98c3-4142910ffb94)
 Voxel grid using voxel_grid_array:
+![image](https://github.com/MohammadKatif/Voxelization/assets/143898427/aacbf8f2-c8f9-4b0c-bd71-d8cde6d6d7c5)
 
 ## Additional Information:
 In this code, I have perfomed voxelization on only one mesh object using trimesh and open3d to demonstrate how the voxelization process works. However, the same method cannot be applied when it comes to voxelizing an entire 3D objects dataset(e.g. ModelNet40/10) in google colab.
