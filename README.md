@@ -14,10 +14,19 @@ This 3D mesh model can be visualized using ```mesh.show()```:
 
 **Lastly**, to confirm whether the voxelization process was successful, I plotted the voxel grid of the model 2 times. The first time, I plotted the voxel grid using the trimesh library itself. The second time, I plotted the voxel grid in matplotlib from two different perspectives (front and back) using the voxel array.
 
+## Voxelization using open3d library
+**First**, I loaded the 3D mesh model of the airplane using the code: ```mesh = o3d.io.read_triangle_mesh('airplane_0001.off')```. (I downloaded and stored the 3D model directly from the ModelNet40 dataset into my working directory beforehand).
+
+**After that**, I performed voxelization on the 3D mesh model (with a voxel_size value of 0.01) by converting it to a voxel grid using the code: ```voxel_grid = o3d.geometry.VoxelGrid.create_from_triangle_mesh(mesh, voxel_size=0.01)```.
+
+**Then**, in order to convert the voxel_grid into a voxel_grid_array, I first converted the voxel_grid into a voxel_coords array and then I converted that voxel_coords array into a voxel_grid_array.
+
+**Lastly**, to confirm whether the voxelization process was successful, I plotted the voxel grid of the model 2 times using matplotlib. The first time, I plotted the voxel grid using the voxel_coords array. The second time, I plotted the voxel grid using the voxel_grid_array. *(Unlike trimesh, the plotting mechanism of open3d doesn't seems to work in google colab, which is why I have used matplotlib to visualize the voxel grids in this section)*
+
 Voxel grid using trimesh:
 ![image](https://github.com/MohammadKatif/Voxelization/assets/143898427/6f834274-c54e-4b0b-b8a4-908675f1e8aa)
 Voxel grid using matplotlib:
 ![image](https://github.com/MohammadKatif/Voxelization/assets/143898427/1be56a11-2917-4e12-a74c-bcfd35b08ebf)
 
 ## Additional Information:
-If anyone wants to perform voxelization on many 3D models (for example, the entire ModelNet40 Dataset), the pitch value should be kept high, which will reduce the resolution but utilize less memory and consume less time. Additionally, even after increasing the pitch value, performing voxelization on many 3D models can consume a lot of time. Therefore, to avoid repeating this process, the results of the voxelization can be stored in a compressed npz file and saved to your local working directory using the code: ```np.savez_compressed('voxel_array.npz', voxel_array)```.
+In this code, I have perfomed voxelization on only one mesh object using trimesh and open3d to demonstrate how the voxelization process works. However, the same method cannot be applied when it comes to voxelizing an entire 3D objects dataset(e.g. ModelNet40/10) in google colab.
