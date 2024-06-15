@@ -13,6 +13,7 @@ This 3D mesh model can be visualized using ```mesh.show()```:
 **After that**, I performed voxelization on the 3D mesh model (with a pitch value of 1.0) by converting it to a voxel grid using the code: ```voxel_grid = mesh.voxelized(pitch=1.0)```. Then, I converted that voxel grid into a 3D voxel array using the code: ```voxel_array = voxel_grid.matrix.astype(int)```.
 
 **Lastly**, to confirm whether the voxelization process was successful, I plotted the voxel grid of the model 2 times. The first time, I plotted the voxel grid using the trimesh library itself. The second time, I plotted the voxel grid in matplotlib from two different perspectives (front and back) using the voxel array.
+
 Voxel grid using trimesh:
 ![image](https://github.com/MohammadKatif/Voxelization/assets/143898427/6f834274-c54e-4b0b-b8a4-908675f1e8aa)
 Voxel grid using matplotlib:
