@@ -14,6 +14,12 @@ This 3D mesh model can be visualized using ```mesh.show()```:
 
 **Lastly**, to confirm whether the voxelization process was successful, I plotted the voxel grid of the model 2 times. The first time, I plotted the voxel grid using the trimesh library itself. The second time, I plotted the voxel grid in matplotlib from two different perspectives (front and back) using the voxel array.
 
+Voxel grid using trimesh:
+![image](https://github.com/MohammadKatif/Voxelization/assets/143898427/6f834274-c54e-4b0b-b8a4-908675f1e8aa)
+
+Voxel grid using matplotlib:
+![image](https://github.com/MohammadKatif/Voxelization/assets/143898427/1be56a11-2917-4e12-a74c-bcfd35b08ebf)
+
 ## Voxelization using open3d library
 **First**, I loaded the 3D mesh model of the airplane using the code: ```mesh = o3d.io.read_triangle_mesh('airplane_0001.off')```. (I downloaded and stored the 3D model directly from the ModelNet40 dataset into my working directory beforehand).
 
@@ -23,10 +29,11 @@ This 3D mesh model can be visualized using ```mesh.show()```:
 
 **Lastly**, to confirm whether the voxelization process was successful, I plotted the voxel grid of the model 2 times using matplotlib. The first time, I plotted the voxel grid using the voxel_coords array. The second time, I plotted the voxel grid using the voxel_grid_array. *(Unlike trimesh, the plotting mechanism of open3d doesn't seems to work in google colab, which is why I have used matplotlib to visualize the voxel grids in this section)*
 
-Voxel grid using trimesh:
-![image](https://github.com/MohammadKatif/Voxelization/assets/143898427/6f834274-c54e-4b0b-b8a4-908675f1e8aa)
-Voxel grid using matplotlib:
-![image](https://github.com/MohammadKatif/Voxelization/assets/143898427/1be56a11-2917-4e12-a74c-bcfd35b08ebf)
+Voxel grid using voxel_coords array:
+![image](https://github.com/MohammadKatif/Voxelization/assets/143898427/9ee9a79d-5ce4-460c-8837-831adbc0e2ec)
+
+Voxel grid using voxel_grid_array:
+![image](https://github.com/MohammadKatif/Voxelization/assets/143898427/ea04d972-4ec6-4e90-98c3-4142910ffb94)
 
 ## Additional Information:
 In this code, I have perfomed voxelization on only one mesh object using trimesh and open3d to demonstrate how the voxelization process works. However, the same method cannot be applied when it comes to voxelizing an entire 3D objects dataset(e.g. ModelNet40/10) in google colab.
